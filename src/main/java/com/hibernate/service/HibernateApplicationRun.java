@@ -1,7 +1,7 @@
 package com.hibernate.service;
 
-import com.hibernate.hibe_metod.HibernateMethodForCar;
-import com.hibernate.inf.HibernateInterface;
+import com.hibernate.metod.forgist.HibernateMethodForCar;
+import com.hibernate.inter.face.HibernateInterface;
 import com.hibernate.model.Car;
 import com.hibernate.model.Engine;
 import org.hibernate.SessionFactory;
@@ -17,7 +17,7 @@ public class HibernateApplicationRun {
 
             factory = new Configuration().configure().buildSessionFactory();
 
-            HibernateInterface<Car, Integer> hibe = new HibernateMethodForCar(factory);
+            HibernateInterface<Car, Integer> hm = new HibernateMethodForCar(factory);
 
             final Engine engine = new Engine();
             final Car car = new Car();

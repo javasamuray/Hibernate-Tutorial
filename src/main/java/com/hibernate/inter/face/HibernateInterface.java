@@ -1,4 +1,4 @@
-package com.hibernate.inf;
+package com.hibernate.inter.face;
 
 import com.hibernate.model.Engine;
 

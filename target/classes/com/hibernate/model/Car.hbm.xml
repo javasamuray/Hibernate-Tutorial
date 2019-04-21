@@ -15,6 +15,6 @@
         <!--Прикрепляем сущьность двигателя к таблицам.-->
         <many-to-one name="engine" column="engine_id"
                      class="com.hibernate.model.Engine"
-                     cascade="save-update" />
+                     cascade="save-update"/>
     </class>
 </hibernate-mapping>

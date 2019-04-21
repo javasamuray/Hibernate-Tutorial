@@ -1,6 +1,6 @@
-package com.hibernate.hibe_metod;
+package com.hibernate.metod.forgist;
 
-import com.hibernate.inf.HibernateInterface;
+import com.hibernate.inter.face.HibernateInterface;
 import com.hibernate.model.Car;
 import com.hibernate.model.Engine;
 import org.hibernate.Hibernate;
