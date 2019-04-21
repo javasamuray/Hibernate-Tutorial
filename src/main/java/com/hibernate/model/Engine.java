@@ -13,11 +13,16 @@ public class Engine {
     public Engine() {
     }
 
+    public Engine(int id) {
+        this.id = id;
+    }
+
     public Engine(int id, String model, int power) {
         this.id = id;
         this.model = model;
         this.power = power;
     }
+
 
     public int getId() {
         return id;
@@ -65,5 +70,9 @@ public class Engine {
                 ", model='" + model + '\'' +
                 ", power=" + power +
                 '}';
+    }
+
+    public String getEngine(Engine engine) {
+        return engine.toString();
     }
 }

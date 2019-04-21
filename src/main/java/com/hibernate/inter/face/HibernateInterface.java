@@ -1,12 +1,10 @@
 package com.hibernate.inter.face;
 
-import com.hibernate.model.Engine;
-
 public interface HibernateInterface<Entity, Key> {
 
-    void create(Engine entity);
+    void create(Entity entity);
 
-    Object read(Key key);
+    Object read(int key);
 
     void update(Entity entity);
 

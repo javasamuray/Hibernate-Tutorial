@@ -15,6 +15,10 @@ public class Car {
     public Car() {
     }
 
+    public Car(int id) {
+        this.id = id;
+    }
+
     public Car(int id, String mark, String model, Engine engine) {
         this.id = id;
         this.mark = mark;
@@ -79,4 +83,9 @@ public class Car {
                 ", engine=" + engine +
                 '}';
     }
+
+    public String getCar(Car car) {
+        return car.toString();
+    }
+
 }

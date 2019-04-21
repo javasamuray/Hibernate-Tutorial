@@ -2,11 +2,10 @@ package com.hibernate.metod.forgist;
 
 import com.hibernate.inter.face.HibernateInterface;
 import com.hibernate.model.Car;
-import com.hibernate.model.Engine;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.jetbrains.annotations.*;
+import org.jetbrains.annotations.NotNull;
 
 
 public class HibernateMethodForCar implements HibernateInterface<Car, Integer> {
@@ -21,7 +20,7 @@ public class HibernateMethodForCar implements HibernateInterface<Car, Integer> {
     }
 
     @Override
-    public void create(@NotNull final Engine car) {
+    public void create(@NotNull final Car car) {
 
         try (final Session session = factory.openSession()) {
 
@@ -34,7 +33,7 @@ public class HibernateMethodForCar implements HibernateInterface<Car, Integer> {
     }
 
     @Override
-    public Car read(@NotNull final Integer id) {
+    public Car read(@NotNull final int id) {
 
         Car result;
         try (final Session session = factory.openSession()) {
@@ -42,7 +41,7 @@ public class HibernateMethodForCar implements HibernateInterface<Car, Integer> {
             result = session.get(Car.class, id);
 
             if (result != null) {
-                Hibernate.initialize(result.getClass());
+                Hibernate.initialize(result.getCar(result));
             }
 
         }

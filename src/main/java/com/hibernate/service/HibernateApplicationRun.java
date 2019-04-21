@@ -1,7 +1,8 @@
 package com.hibernate.service;
 
-import com.hibernate.metod.forgist.HibernateMethodForCar;
 import com.hibernate.inter.face.HibernateInterface;
+import com.hibernate.metod.forgist.HibernateMethodForCar;
+import com.hibernate.metod.forgist.HibernateMethodForEngine;
 import com.hibernate.model.Car;
 import com.hibernate.model.Engine;
 import org.hibernate.SessionFactory;
@@ -17,11 +18,19 @@ public class HibernateApplicationRun {
 
             factory = new Configuration().configure().buildSessionFactory();
 
-            HibernateInterface<Car, Integer> hm = new HibernateMethodForCar(factory);
+            HibernateInterface<Car, Integer> hmCar = new HibernateMethodForCar(factory);
+            HibernateInterface<Engine, Integer> hmEngine = new HibernateMethodForEngine(factory);
 
-            final Engine engine = new Engine();
-            final Car car = new Car();
 
+
+            String resCar = hmCar.read(3).toString();
+            String resEngine = hmEngine.read(24).toString();
+
+            System.out.println("Car: " + resCar);
+            System.out.println("Car: " + resEngine);
+
+            //hmCar.delete(new Car(1));
+            //hmEngine.delete(new Engine(24));
 
         } finally {
             if (factory != null) {
